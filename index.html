@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+        body{
+        margin:0px;
+        padding: 0px;
+        font-family: 'Advent Pro', sans-serif !important;
+      }
+      h1,h2,h3,h4,h5,h6,p{
+        margin:0px 
+      }
+      .parentDiv{
+        width: 100%;
+        min-height: calc(100vh - 24px);
+        background-image: linear-gradient(to right, #0099F7, #F11712);
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 24px;
+      }
+      .cardDiv{
+        width: 30%;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 1px 3.84px 0.16px rgba(115, 129, 143, 0.7);
+        padding: 24px 12px;
+      }
+      .cardDiv h2{
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        margin:0px;
+        margin-bottom: 24px 
+      }
+      .header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0px;
+        font-size: 14px;
+      }
+      .headerBody{
+        max-height: 44px;
+        overflow: hidden;
+        padding: 0px 12px;
+        border-bottom: 1px solid #d0d0d0;
+        cursor: pointer;
+      }
+      .headerBody:last-child{
+        border-bottom: 0px solid #d0d0d0;
+      }
+      .body{
+        padding: 12px 0;
+        padding-top: 0;
+      }
+      .headerBody.expanded{
+        max-height: initial;
+        overflow: visible;
+      }
+     
+    </style>
+  </head>
+
+  <body>
+    <div class="parentDiv">
+      <div class="cardDiv">
+        <h2>Expand Your Answer</h2>
+        <div class="acoContain">
+          <div class="headerBody">
+            <div class="header" data-index="1">
+              <h3>Section 01</h3>
+              <span class="fa fa-caret-right" aria-hidden="true"></span>
+            </div>
+            <div class="body" data-content="1">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="headerBody">
+            <div class="header" data-index="2">
+              <h3>Section 02</h3>
+              <span class="fa fa-caret-right" aria-hidden="true"></span>
+            </div>
+            <div class="body" data-content="2">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="headerBody">
+            <div class="header" data-index="2">
+              <h3>Section 03</h3>
+              <span class="fa fa-caret-right" aria-hidden="true"></span>
+            </div>
+            <div class="body" data-content="2">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const header = document.querySelectorAll('.headerBody');
+      const body = document.querySelector('.body');
+
+      let isOpendIcon = true;
+
+      header.forEach(function(Question){
+        Question.addEventListener('click',function(){
+          Question.classList.toggle('expanded')
+          if (Question.classList.contains('expanded')) {
+            Question.querySelector('.fa').classList.add('fa-caret-down')
+            Question.querySelector('.fa').classList.remove('fa-caret-right')
+          }
+          else {
+            Question.querySelector('.fa').classList.add('fa-caret-right')
+            Question.querySelector('.fa').classList.remove('fa-caret-down')
+          }
+         
+        })
+      })
+
+     
+
+
+    </script>
+  </body>
+</html>
+
